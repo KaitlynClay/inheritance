@@ -1,10 +1,19 @@
+/**
+ * Main file
+ * Gets user input about the job
+ *
+ * KMC 9/28/23
+ */
+
 fun main(args: Array<String>) {
+    // option menu
     println("Please enter the number of your choice:")
     println("1. Residential Customer")
     println("2. Commercial Customer")
     println("3. Done")
     var userInput = readLine()?.toInt()
     if (userInput == 1) {
+        // input for Residential class
         print("Enter the Residential Customer's name: ")
             var customerName = readLine()!!
             print("Enter customer's phone number: ")
@@ -18,6 +27,7 @@ fun main(args: Array<String>) {
             var residentCustom = Residential(senior, customerName, customerPhone, customerAddress, squareFootage)
             residentCustom.resWeeklyCharges()
     } else if (userInput == 2) {
+        // input for Commercial class
         print("Enter the Commercial Customer's name: ")
                 var customerName = readLine()!!.toString()
                 print("Enter customer's phone number: ")

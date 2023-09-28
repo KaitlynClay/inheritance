@@ -1,3 +1,9 @@
+/**
+ * Commercial class
+ * Will take all the commercial input from Main and manipulate it
+ *
+ * KMC 9/28/23
+ */
 import java.text.DecimalFormat
 
 class Commercial(var propertyName1: String,
@@ -19,12 +25,15 @@ class Commercial(var propertyName1: String,
         var totsqft = squareFootage + squareFootage2 +squareFootage3 + squareFootage4 + squareFootage5
         var multiPropCharges: Double
         var charges = comRate * totsqft
+        // finding what the company should charge the customer
+        // and if they have multiply property: possible dicount
         if (multiProperty == true) {
             multiPropCharges = charges * .9
         } else {
             multiPropCharges = charges
         }
 
+        // formatting the charge output
         var chargeFormat = DecimalFormat("#.##")
         var formattedCharges = chargeFormat.format(multiPropCharges)
 
